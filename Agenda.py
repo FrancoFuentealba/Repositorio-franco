@@ -68,6 +68,7 @@ def menu():
     while True:
         try:
             print("****Agenda de contactos****")
+            print("esto es una prueba")
             num=int(input("\n1.Agregar contacto\n2.Buscar contacto\n3.Modificar contacto\n4.Eliminar contacto\n5.Mostar contactos\n6.Salir\nSeleccione: "))
             if num==6:
                 print("¡Hasta luego!")
