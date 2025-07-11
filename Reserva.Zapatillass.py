@@ -23,6 +23,7 @@ def codigo(nom):
         print(f"Reserva realizada exitosamente a {nom}")
         return 
 
+
 def reserva_zapatillas():
     while True:
         nom=input("Nombre del comprador: ")
@@ -35,6 +36,32 @@ def reserva_zapatillas():
                 return
             else:
                 return
+
+
+def buscar_zapatillas():
+    global stock
+    nom=input("Ingrese nombre del comprador a buscar: ")
+    for comprador in reservados:
+        if comprador["nombre"]==nom and comprador["tipo"]=="VIP":
+            print("Usted ya es VIP.")
+            return
+        else:
+            print(f"Reserva encontrada: {nom} - {comprador["zapatillas"]} par(es) - {comprador["tipo"]}")
+            while True:
+                op=input("¿Desea pagar adicional para VIP y reservar 2 pares? (s/n): ").lower()
+                if op not in ["s","n"]:
+                    print("Ingrese una opcion en pantalla.")
+                elif op== "s":
+                    print(f"Resevera actualizada a VIP. Ahora {nom} tiene 2 pares")
+                    stock-=1
+                    comprador["tipo"]="VIP"
+                    comprador["zapatillas"]+=1
+                    return
+                else:
+                    print("Manteniendo reserva actual.")
+                    return
+    print("El comprador no existe.")
+    return
 
 
 def cancelar_reserva():
