@@ -3,6 +3,27 @@ os.system('cls')
 stock=10
 reservados=[]
 
+def codigo(nom):
+    global stock
+    clave=input("Digite la clave secreta para reservar: ")
+    if clave != "EstoyEnListaDeReserva":
+        print("Clave incorrecta")
+        return
+    elif stock==0:
+        print("No hay stock suficiente.")
+        return 
+    else:
+        usuarios={
+            "nombre": nom,
+            "zapatillas": 1,
+            "tipo": "estandar"
+        }
+        reservados.append(usuarios)
+        stock-=1
+        print(f"Reserva realizada exitosamente a {nom}")
+        return 
+
+
 def reserva_zapatillas():
     while True:
         nom=input("Nombre del comprador: ")
