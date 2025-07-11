@@ -3,6 +3,19 @@ os.system('cls')
 stock=10
 reservados=[]
 
+def reserva_zapatillas():
+    while True:
+        nom=input("Nombre del comprador: ")
+        if any(usuario["nombre"]==nom for usuario in reservados):
+            print(f"{nom} ya tiene reserva.")
+            return
+        else:  
+            resultado=codigo(nom)
+            if resultado:
+                return
+            else:
+                return
+
 
 def cancelar_reserva():
     nom=input("Ingrese nombre del comprador: ")
