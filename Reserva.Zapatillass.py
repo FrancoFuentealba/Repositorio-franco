@@ -23,7 +23,6 @@ def codigo(nom):
         print(f"Reserva realizada exitosamente a {nom}")
         return 
 
-
 def reserva_zapatillas():
     while True:
         nom=input("Nombre del comprador: ")
